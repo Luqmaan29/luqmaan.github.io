@@ -1,36 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luqmaan | AI & ML Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #1e1e2f;
+      background-color: #1a1a2e;
       color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    h1 {
-      font-size: 2rem;
-    }
-    .tagline {
+
+    header p {
       font-size: 1.2rem;
       color: #ccc;
     }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #1a1a2e;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.3rem 0;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .contact a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
     .btn {
       display: inline-block;
       background: #4CAF50;
@@ -40,42 +82,48 @@
       border-radius: 6px;
       margin-top: 10px;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #1e1e2f;
+      background-color: #1a1a2e;
       color: #aaa;
+      font-size: 0.9rem;
       margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>👋 Hi, I'm Luqmaan</h1>
-  <p class="tagline">AI & ML Student | Data Analytics | LLMs | GenAI Enthusiast</p>
-  <a class="btn" href="mailto:yourmail@gmail.com">📩 Contact Me</a>
-</header>
+  <header>
+    <h1>👋 Hi, I'm Luqmaan</h1>
+    <p>AI & ML Student | Data Analytics | GenAI | LLM Enthusiast</p>
+  </header>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    I'm an AI & ML student passionate about solving real-world problems through Machine Learning,
-    NLP, and LLMs. Currently exploring Generative AI, Cloud Computing, and Prompt Engineering.
-    I'm actively looking for internships and entry-level roles in Data Analytics, AI, and LLM research.
-  </p>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate AI & ML student based in Bengaluru, currently focused on solving real-world problems using Machine Learning,
+      NLP, and Generative AI. I love exploring LLMs, cloud platforms, and open-source tools. I'm actively seeking internships or
+      entry-level roles in Data Analytics, LLM research, and applied AI.
+    </p>
+  </section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Languages: Python, SQL, JavaScript</li>
-    <li>Libraries: Pandas, Scikit-learn, Transformers, Streamlit</li>
-    <li>Cloud: AWS, GCP (Beginner)</li>
-  </ul>
-
-  <h2>Resume</h2>
-  <p><a class="btn" href="resume.pdf" download>📄 Download My Resume</a></p>
-</section>
-
-
+  <section>
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <p>📧 Email: <a href="mailto:mohammedluqmaan29@gmail.com">mohammedluqmaan29@gmail.com</a></p>
+      <p>🔗 LinkedIn: <a href="www.linkedin.com/in/mohammed-luqmaan-6a9114218" target="_blank">LinkedIn</a></p>
+      <p>📱 Phone: <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+      <p>📄 <a class="btn" href="resume.pdf" download>Download My Resume</a></p>
+    </div>
+  </section>
 </body>
 </html>
