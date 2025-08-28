@@ -14,12 +14,19 @@
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
     }
-    header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
     header p { font-size: 1.2rem; color: #bbb; }
     nav {
       background: #0f3460;
@@ -29,6 +36,7 @@
     }
     nav a {
       color: white; margin: 0 15px; text-decoration: none; font-weight: 600;
+      transition: color 0.3s ease;
     }
     nav a:hover { color: #4CAF50; }
     section {
@@ -38,16 +46,51 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
     }
     h2 { color: #16213e; margin-bottom: 1rem; border-left: 4px solid #4CAF50; padding-left: 0.5rem; }
     ul { list-style-type: none; padding: 0; }
-    ul li { margin-bottom: 0.8rem; }
+    ul li {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    ul li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
     .contact a { color: #0077cc; text-decoration: none; }
     .contact a:hover { text-decoration: underline; }
     .btn {
       display: inline-block; background: #4CAF50; color: white;
       padding: 10px 20px; text-decoration: none; border-radius: 6px; margin-top: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
+    .btn:hover { background: #45a049; transform: scale(1.05); }
+
+    /* Skills */
+    .skill {
+      margin-bottom: 1rem;
+    }
+    .skill p { margin-bottom: 0.3rem; font-weight: 600; }
+    .skill-bar {
+      background: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 15px;
+    }
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: #4CAF50;
+      border-radius: 20px;
+      transition: width 1s ease;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -56,109 +99,139 @@
       font-size: 0.9rem;
       margin-top: 2rem;
     }
+
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
       section { margin: 1rem; padding: 1.5rem; }
+      nav a { display: block; margin: 8px 0; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>👋 Hi, I'm Luqmaan</h1>
-    <p>MSc AI & ML Student | Data Analytics | Machine Learning | LLM & Generative AI | Research Enthusiast</p>
-  </header>
+<header>
+  <h1>👋 Hi, I'm Luqmaan</h1>
+  <p>MSc AI & ML Student | Data Analytics | Machine Learning | LLM & Generative AI | Research Enthusiast</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#internship">Internship</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#internship">Internship</a>
+  <a href="#leadership">Leadership</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am an analytical and tech-savvy AI/ML enthusiast with a strong foundation in Python, SQL, Power BI, and Machine Learning frameworks. My passion lies in harnessing the power of Data Analytics, Generative AI, and Large Language Models (LLMs) to build intelligent systems that solve complex, real-world challenges.
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am an analytical and tech-savvy AI/ML enthusiast with a strong foundation in Python, SQL, Power BI, and Machine Learning frameworks. 
+    My passion lies in harnessing the power of Data Analytics, Generative AI, and Large Language Models (LLMs) to build intelligent systems that solve complex, real-world challenges.
+  </p>
+  <p>
+    With hands-on experience in data preprocessing, visualization, and predictive modeling, I specialize in transforming raw datasets into meaningful insights. 
+    I enjoy designing interactive dashboards, scalable ML pipelines, and GenAI-driven applications that blend technical depth with practical business value.
+  </p>
+</section>
 
-With hands-on experience in data preprocessing, visualization, and predictive modeling, I specialize in transforming raw datasets into meaningful insights and actionable strategies. I enjoy designing interactive dashboards, scalable ML pipelines, and GenAI-driven applications that blend technical depth with practical business value.
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skill"><p>Python</p><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
+  <div class="skill"><p>SQL</p><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
+  <div class="skill"><p>Power BI</p><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></div>
+  <div class="skill"><p>Machine Learning</p><div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div></div>
+  <div class="skill"><p>LLM & Generative AI</p><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
+</section>
 
-My research and academic journey has exposed me to the cutting edge of AI, from fine-tuning LLMs and prompt engineering to applying transformers and multi-agent systems in innovative domains such as recommendation engines, chatbots, and automated analytics. Alongside, I’ve developed strong communication and leadership skills — having moderated panel discussions, collaborated across teams, and presented insights to both academic and professional audiences.
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li><strong>📱 Phonix</strong> – Smartphone Recommendation System using Streamlit & LLMs. <a href="https://github.com/Luqmaan29/Phonix" target="_blank">View Project</a></li>
+    <li><strong>🤖 Fitness Chatbot (RAG)</strong> – Chatbot using LangChain + FAISS + Groq API. <a href="#">View Project</a></li>
+    <li><strong>🍳 Recipe Agent</strong> – AI-powered Recipe Agent using AGNO + Groq API + Streamlit. <a href="#">View Project</a></li>
+    <li><strong>✈️ Triptacticx</strong> – Multi-Agent Travel Planner automating itineraries & email delivery. <a href="#">View Project</a></li>
+    <li><strong>🧪 Toxic Comment Detection</strong> – NLP Pipeline to classify Social Media Comments. <a href="#">View Project</a></li>
+    <li><strong>⚡ Obesity Prediction Paper</strong> – AI models comparing Random Forest vs Neural Networks. <a href="#">View Paper</a></li>
+    <li><strong>📊 IPL Dashboard</strong> – Interactive Power BI dashboard for cricket analytics. <a href="#">View Dashboard</a></li>
+    <li><strong>🥗 India Nutrition Dashboard</strong> – State-wise nutrition analytics in Power BI. <a href="#">View Dashboard</a></li>
+  </ul>
+</section>
 
-I am continuously exploring ways to integrate Data Analytics + AI/ML + Generative AI to drive intelligent automation, accelerate decision-making, and create impactful solutions that bridge technology and human needs.
-    </p>
-  </section>
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>MSc Artificial Intelligence & Machine Learning</strong>, Christ University, Bangalore (2024 – Present)</li>
+    <li><strong>Bachelor of Computer Applications</strong>, St Francis College, Bangalore (2021 – 2024) – 91%</li>
+  </ul>
+</section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>💻 Programming: Python, SQL, HTML, CSS, JavaScript</li>
-      <li>🧠 AI/ML: Scikit-learn, TensorFlow, PyTorch, Hugging Face, LLM</li>
-      <li>📊 Data & Analytics: Power BI, Excel, EDA, Visualization, Statistical Analysis</li>
-      <li>🌐 Tools: Git, Docker, VS Code, Jupyter Notebook</li>
-      <li>☁️ Cloud: AWS</li>
-      <li>🗄️ Databases: MySQL, MongoDB</li>
-    </ul>
-  </section>
+<section id="internship">
+  <h2>Internship</h2>
+  <p><strong>Artificial Intelligence Trainee</strong>, SkillVertex (Dec 2022)</p>
+  <ul>
+    <li>Hands-on with CNNs, RNNs, supervised & unsupervised ML models.</li>
+    <li>Built ML pipelines & applied models on structured datasets.</li>
+    <li>Explored NLP & deep learning frameworks for practical applications.</li>
+  </ul>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>📱 Phonix</strong> – Smartphone Recommendation System using Streamlit, LLMs, and DB integration. <a href="https://github.com/Luqmaan29" target="_blank"></a></li>
-      <li><strong>🤖 Fitness Chatbot (RAG)</strong> –Chatbot using LangChain + FAISS + Groq API.</li>
-      <li><strong>🍳 Recipe Agent</strong> – AI-powered Recipe Agent using AGNO + Groq API + Streamlit.</li>
-      <li><strong>✈️ Triptacticx</strong> – Multi-Agent Travel Planner automating itineraries & email delivery.</li>
-      <li><strong>🧪 Toxic Comment Detection</strong> – NLP Pipeline to classify Social Media Comments. <a href="https://github.com/luqmaan-29/Projects.git" target="_blank"></a></li>
-      <li><strong>⚡ Obesity Prediction Paper</strong> – AI models comparing Random Forest vs Neural Networks.</li>
-      <li><strong>📊 IPL Dashboard</strong> – Interactive Power BI dashboard for cricket analytics.</li>
-      <li><strong>🥗 India Nutrition Dashboard</strong> – State-wise nutrition analytics in Power BI.</li>
-    </ul>
-  </section>
+<section id="leadership">
+  <h2>Leadership Experience</h2>
+  <ul>
+    <li>👨‍💼 General Secretary – IT Club, St Francis College (Oct 2023 – May 2024)</li>
+    <li>🎤 Panel Discussion Moderator – BI Case Studies, Christ University (Aug 2025)</li>
+    <li>📌 Core Committee – Exhibit 2024, Christ University (Dec 2024)</li>
+  </ul>
+</section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MSc Artificial Intelligence & Machine Learning</strong>, Christ University, Bangalore (2024 – Present)</li>
-      <li><strong>Bachelor of Computer Applications</strong>, St Francis College, Bangalore (2021 – 2024) – 91%</li>
-    </ul>
-  </section>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact">
+    <p>📧 <a href="mailto:mohammedluqmaan29@gmail.com">mohammedluqmaan29@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/mohammed-luqmaan-6a9114218/" target="_blank">LinkedIn</a></p>
+    <p>💻 <a href="https://github.com/Luqmaan29" target="_blank">GitHub</a></p>
+    <p>📱 <a href="tel:+919739888398">+91 97398 88398</a></p>
+  </div>
+</section>
 
-  <section id="internship">
-    <h2>Internship</h2>
-    <p><strong>Artificial Intelligence Trainee</strong>, SkillVertex (Dec 2022)</p>
-    <ul>
-      <li>Hands-on with CNNs, RNNs, supervised & unsupervised ML models.</li>
-      <li>Built ML pipelines & applied models on structured datasets.</li>
-      <li>Explored NLP & deep learning frameworks for practical applications.</li>
-    </ul>
-  </section>
+<footer>
+  <p>© Syed Mohammed Luqmaan</p>
+</footer>
 
-  <section id="leadership">
-    <h2>Leadership Experience</h2>
-    <ul>
-      <li>👨‍💼 General Secretary – IT Club, St Francis College (Oct 2023 – May 2024)</li>
-      <li>🎤 Panel Discussion Moderator – BI Case Studies, Christ University (Aug 2025)</li>
-      <li>📌 Core Committee – Exhibit 2024, Christ University (Dec 2024)</li>
-    </ul>
-  </section>
+<script>
+  // Smooth scroll
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact">
-      <p>📧 <a href="mailto:mohammedluqmaan29@gmail.com">mohammedluqmaan29@gmail.com</a></p>
-      <p>🔗 <a href="https://www.linkedin.com/in/mohammed-luqmaan-6a9114218/" target="_blank">LinkedIn</a></p>
-      <p>💻 <a href="https://github.com/Luqmaan29" target="_blank">GitHub</a></p>
-      <p>📱 <a href="tel:+919739888398">+91 97398 88398</a></p>
-      
-    </div>
-  </section>
+  // Fade-in sections
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < window.innerHeight - 100) {
+        section.style.opacity = 1;
+        section.style.transform = 'translateY(0)';
+      }
+    });
+  });
 
-  <footer>
-    <p>© Syed Mohammed Luqmaan </p>
-  </footer>
+  // Animate skill bars
+  const skillFills = document.querySelectorAll('.skill-fill');
+  window.addEventListener('scroll', () => {
+    skillFills.forEach(skill => {
+      const top = skill.getBoundingClientRect().top;
+      if(top < window.innerHeight) {
+        skill.style.width = skill.getAttribute('data-width');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
