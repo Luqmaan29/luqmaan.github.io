@@ -72,25 +72,38 @@
     }
     .btn:hover { background: #45a049; transform: scale(1.05); }
 
-    /* Skills */
-    .skill {
-      margin-bottom: 1rem;
-    }
-    .skill p { margin-bottom: 0.3rem; font-weight: 600; }
-    .skill-bar {
-      background: #eee;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 15px;
-    }
-    .skill-fill {
-      height: 100%;
-      width: 0;
-      background: #4CAF50;
-      border-radius: 20px;
-      transition: width 1s ease;
-    }
+    /* Technical Skills Section */
+  skills ul {
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+}
 
+  skills ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #4CAF50; /* Accent */
+  background: #f9f9f9; /* Slight contrast */
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: default;
+  opacity: 0;           /* Start hidden for scroll fade-in */
+  transform: translateY(50px); /* Start slightly below */
+}
+
+  skills ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #f1f8f4;
+}
+
+  skills h2 {
+  margin-bottom: 1rem;
+  border-left: 4px solid #4CAF50;
+  padding-left: 0.5rem;
+  color: #16213e;
+}
     footer {
       text-align: center;
       padding: 1rem;
