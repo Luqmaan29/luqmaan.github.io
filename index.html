@@ -6,83 +6,48 @@
   <title>Luqmaan | AI & ML Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
       background: #f5f7fa;
       color: #222;
       line-height: 1.6;
     }
-
     header {
-      background-color: #1a1a2e;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
       color: white;
-      padding: 3rem 1rem;
       text-align: center;
+      padding: 3rem 1rem;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; color: #bbb; }
+    nav {
+      background: #0f3460;
+      padding: 0.8rem;
+      text-align: center;
+      position: sticky; top: 0; z-index: 1000;
     }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
+    nav a {
+      color: white; margin: 0 15px; text-decoration: none; font-weight: 600;
     }
-
+    nav a:hover { color: #4CAF50; }
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 2rem;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-
-    h2 {
-      color: #1a1a2e;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      padding: 0.3rem 0;
-    }
-
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .contact a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
+    h2 { color: #16213e; margin-bottom: 1rem; border-left: 4px solid #4CAF50; padding-left: 0.5rem; }
+    ul { list-style-type: none; padding: 0; }
+    ul li { margin-bottom: 0.8rem; }
+    .contact a { color: #0077cc; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
     .btn {
-      display: inline-block;
-      background: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
+      display: inline-block; background: #4CAF50; color: white;
+      padding: 10px 20px; text-decoration: none; border-radius: 6px; margin-top: 10px;
     }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -91,12 +56,9 @@
       font-size: 0.9rem;
       margin-top: 2rem;
     }
-
     @media (max-width: 600px) {
-      section {
-        padding: 1.5rem;
-        margin: 1rem;
-      }
+      header h1 { font-size: 2rem; }
+      section { margin: 1rem; padding: 1.5rem; }
     }
   </style>
 </head>
@@ -104,26 +66,96 @@
 
   <header>
     <h1>👋 Hi, I'm Luqmaan</h1>
-    <p>AI & ML Student | Data Analytics | GenAI | LLM Enthusiast</p>
+    <p>MSc AI & ML Student | Data Analytics | Generative AI | Research Enthusiast</p>
   </header>
 
-  <section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#internship">Internship</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a passionate AI & ML student based in Bengaluru, currently focused on solving real-world problems using Machine Learning,
-      NLP, and Generative AI. I love exploring LLMs, cloud platforms, and open-source tools. I'm actively seeking internships or
-      entry-level roles in Data Analytics, LLM research, and applied AI.
+      Analytical and tech-savvy AI/ML enthusiast with expertise in Python, SQL, Power BI, and Large Language Models (LLMs).
+      Passionate about Machine Learning, Generative AI, and building intelligent systems to solve real-world problems.
+      Strong communication and teamwork skills, with experience moderating academic panels and delivering research-driven insights.
     </p>
   </section>
 
-  <section>
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>💻 Programming: Python, SQL, Java, JavaScript</li>
+      <li>🧠 AI/ML: Scikit-learn, TensorFlow, PyTorch, Hugging Face, LLMs (GPT, BERT, CamemBERT)</li>
+      <li>📊 Data & Analytics: Power BI, Excel, EDA, Visualization, Statistical Analysis</li>
+      <li>🌐 Tools: Git, Docker, VS Code, Jupyter Notebook</li>
+      <li>☁️ Cloud: AWS</li>
+      <li>🗄️ Databases: MySQL, MongoDB, SQLite</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>📱 Phonix</strong> – Smartphone Recommendation System using Streamlit, LLMs, and DB integration. <a href="https://github.com/Luqmaan29" target="_blank">View</a></li>
+      <li><strong>🤖 Fitness Chatbot (RAG)</strong> – Personalized workout & diet chatbot using LangChain + FAISS + Groq API.</li>
+      <li><strong>🍳 Recipe Agent</strong> – AI-powered Recipe Agent using AGNO + Groq API + Streamlit.</li>
+      <li><strong>✈️ Triptacticx</strong> – Multi-Agent Travel Planner automating itineraries & email delivery.</li>
+      <li><strong>🧪 Toxic Comment Detection</strong> – NLP Pipeline with Flask + Docker. <a href="https://github.com/luqmaan-29/Projects.git" target="_blank">GitHub</a></li>
+      <li><strong>⚡ Obesity Prediction</strong> – AI models comparing Random Forest vs Neural Networks.</li>
+      <li><strong>📊 IPL Dashboard</strong> – Interactive Power BI dashboard for cricket analytics.</li>
+      <li><strong>🥗 India Nutrition Dashboard</strong> – State-wise nutrition analytics in Power BI.</li>
+      <li><strong>🎨 Air Canvas</strong> – Real-time drawing app with cursor tracking.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MSc Artificial Intelligence & Machine Learning</strong>, Christ University, Bangalore (2024 – Present)</li>
+      <li><strong>Bachelor of Computer Applications</strong>, St Francis College, Bangalore (2021 – 2024) – 91%</li>
+    </ul>
+  </section>
+
+  <section id="internship">
+    <h2>Internship</h2>
+    <p><strong>Artificial Intelligence Trainee</strong>, SkillVertex (Dec 2022)</p>
+    <ul>
+      <li>Hands-on with CNNs, RNNs, supervised & unsupervised ML models.</li>
+      <li>Built ML pipelines & applied models on structured datasets.</li>
+      <li>Explored NLP & deep learning frameworks for practical applications.</li>
+    </ul>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership Experience</h2>
+    <ul>
+      <li>👨‍💼 General Secretary – IT Club, St Francis College (Oct 2023 – May 2024)</li>
+      <li>🎤 Panel Discussion Moderator – BI Case Studies, Christ University (Aug 2025)</li>
+      <li>📌 Core Committee – Exhibit 2024, Christ University (Dec 2024)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
-      <p>📧 Email: <a href="mailto:mohammedluqmaan29@gmail.com">mohammedluqmaan29@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="www.linkedin.com/in/mohammed-luqmaan-6a9114218" target="_blank">www.linkedin.com/in/mohammed-luqmaan-6a9114218</a></p>
-      <p>📱 Phone: <a href="tel:+919739888398">+91-9739888398</a></p>
+      <p>📧 <a href="mailto:mohammedluqmaan29@gmail.com">mohammedluqmaan29@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/mohammed-luqmaan-6a9114218/" target="_blank">LinkedIn</a></p>
+      <p>💻 <a href="https://github.com/Luqmaan29" target="_blank">GitHub</a></p>
+      <p>📱 <a href="tel:+919739888398">+91 97398 88398</a></p>
       <p>📄 <a class="btn" href="resume.pdf" download>Download My Resume</a></p>
     </div>
   </section>
+
+  <footer>
+    <p>© 2025 Luqmaan | Built with ❤️ using HTML, CSS & GitHub Pages</p>
+  </footer>
+
 </body>
 </html>
